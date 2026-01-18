@@ -200,112 +200,130 @@ body {
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
-/* Анимация молекулы */
+/* Простая молекула фосфата */
 .hero-visual {
-    position: relative;
-    width: 300px;
-    height: 300px;
+    margin-top: 2rem;
 }
 
-.molecule-animation {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.simple-molecule {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow);
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.atom {
-    position: absolute;
-    width: 40px;
-    height: 40px;
+.chem-formula {
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.chem-element {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 1.8rem;
     font-weight: bold;
-    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-#atom1 {
-    background-color: var(--danger);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation-delay: 0s;
+.chem-element.p {
+    background: var(--danger);
+    animation: pulse 2s infinite;
 }
 
-#atom2 {
-    background-color: var(--secondary);
-    top: 20%;
-    left: 20%;
-    animation-delay: 0.5s;
+.chem-element.o {
+    background: var(--secondary);
 }
 
-#atom3 {
-    background-color: var(--warning);
-    top: 20%;
-    right: 20%;
-    animation-delay: 1s;
+.chem-charge {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
 }
 
-#atom4 {
-    background-color: var(--success);
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-delay: 1.5s;
-}
-
-.bond {
-    position: absolute;
-    background-color: var(--dark);
-    opacity: 0.5;
-}
-
-#bond1 {
-    width: 120px;
-    height: 3px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#bond2 {
-    width: 120px;
-    height: 3px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-#bond3, #bond4 {
-    width: 100px;
-    height: 3px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .formula-display {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--card-bg);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--shadow);
+    margin: 1rem 0;
 }
 
 .formula-display code {
     font-size: 2rem;
-    color: var(--primary);
     font-weight: bold;
+    color: var(--primary);
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.formula-display p {
+    margin-top: 0.5rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.chem-explanation {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chem-atom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.atom-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.atom-dot.danger {
+    background: var(--danger);
+}
+
+.atom-dot.primary {
+    background: var(--primary);
+}
+
+.chem-minus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.atom-label {
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-align: center;
 }
 
 /* Секции контента */
@@ -320,6 +338,17 @@ body {
 
 .dark-section h2 {
     color: white;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+h2 i {
+    margin-right: 0.5rem;
 }
 
 .content-card {
@@ -511,6 +540,24 @@ body {
     min-width: 200px;
 }
 
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+#phosSlider {
+    width: 100%;
+}
+
+#phosValue {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 0.5rem;
+}
+
 .time-controls {
     display: flex;
     align-items: center;
@@ -525,6 +572,20 @@ body {
     background: transparent;
     color: var(--primary);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#timeDisplay {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
 }
 
 .start-btn {
@@ -538,6 +599,12 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
+    transition: all 0.3s;
+}
+
+.start-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
 }
 
 /* Шаги защиты */
@@ -566,6 +633,10 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
 }
 
 .chemical-list {
@@ -676,6 +747,7 @@ body {
     border-radius: 5px;
     background-color: var(--card-bg);
     color: var(--dark);
+    font-size: 1rem;
 }
 
 .scan-btn {
@@ -689,6 +761,11 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
+}
+
+.scan-btn:hover {
+    background-color: var(--secondary);
 }
 
 /* Викторина */
@@ -713,6 +790,12 @@ body {
     margin-bottom: 2rem;
 }
 
+.question h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
 .options {
     display: flex;
     flex-direction: column;
@@ -725,6 +808,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
+    text-align: left;
 }
 
 .option:hover {
@@ -897,6 +981,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: 600;
 }
 
 .speed-control {
@@ -923,16 +1008,38 @@ body {
         display: none;
     }
     
-    .hero-visual {
-        width: 250px;
-        height: 250px;
+    .hero {
+        padding-top: 4rem;
+    }
+    
+    .simple-molecule {
+        padding: 1.5rem;
+    }
+    
+    .chem-formula {
+        font-size: 2.2rem;
+    }
+    
+    .chem-element {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
     
     .step {
         flex-direction: column;
+        gap: 1rem;
     }
     
     .simulator-controls {
         flex-direction: column;
+    }
+    
+    .detector-controls {
+        flex-direction: column;
+    }
+    
+    h2 {
+        font-size: 2rem;
     }
 }
