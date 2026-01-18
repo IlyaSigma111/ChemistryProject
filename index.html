@@ -49,19 +49,32 @@
             </button>
         </div>
         <div class="hero-visual">
-            <div class="molecule-animation">
-                <div class="atom" id="atom1">P</div>
-                <div class="atom" id="atom2">O</div>
-                <div class="atom" id="atom3">O</div>
-                <div class="atom" id="atom4">O</div>
-                <div class="bond" id="bond1"></div>
-                <div class="bond" id="bond2"></div>
-                <div class="bond" id="bond3"></div>
-                <div class="bond" id="bond4"></div>
-            </div>
-            <div class="formula-display">
-                <code>PO₄³⁻</code>
-                <p>Ион фосфата</p>
+            <div class="simple-molecule">
+                <div class="chem-formula">
+                    <div class="chem-element p">P</div>
+                    <div class="chem-element o">O</div>
+                    <div class="chem-element o">O</div>
+                    <div class="chem-element o">O</div>
+                    <div class="chem-charge">³⁻</div>
+                </div>
+                <div class="formula-display">
+                    <code>PO₄³⁻</code>
+                    <p>Ион фосфата</p>
+                </div>
+                <div class="chem-explanation">
+                    <div class="chem-atom">
+                        <div class="atom-dot danger"></div>
+                        <span class="atom-label">Фосфор</span>
+                    </div>
+                    <div class="chem-atom">
+                        <div class="atom-dot primary"></div>
+                        <span class="atom-label">Кислород</span>
+                    </div>
+                    <div class="chem-atom">
+                        <div class="chem-minus">−3</div>
+                        <span class="atom-label">Заряд</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -72,7 +85,7 @@
             <h2><i class="fas fa-atom"></i> Что такое фосфаты?</h2>
             <div class="content-card">
                 <div class="card-body">
-                    <p>Фосфаты — химические соединения на основе фосфора, которые активно используются в бытовой химии.</p>
+                    <p>Фосфаты — химические соединения на основе фосфора, которые активно используются в бытовой химии для смягчения воды и усиления моющего действия.</p>
                     
                     <div class="slider-container">
                         <h3>Концентрация фосфатов в продуктах</h3>
@@ -94,12 +107,12 @@
                         <div class="fact-card">
                             <i class="fas fa-soap"></i>
                             <h4>Стиральные порошки</h4>
-                            <p>До 70% содержания</p>
+                            <p>70-80% содержания</p>
                         </div>
                         <div class="fact-card">
                             <i class="fas fa-spray-can"></i>
                             <h4>Моющие средства</h4>
-                            <p>До 50% содержания</p>
+                            <p>40-60% содержания</p>
                         </div>
                         <div class="fact-card">
                             <i class="fas fa-cookie-bite"></i>
@@ -156,7 +169,7 @@
             </div>
 
             <div class="pollution-simulator">
-                <h3>Симуляция загрязнения воды</h3>
+                <h3>Симуляция загрязнения воды фосфатами</h3>
                 <div class="simulator-container">
                     <div class="water-tank" id="waterTank">
                         <div class="water-level"></div>
@@ -256,9 +269,10 @@
             </div>
 
             <div class="detector-simulator">
-                <h3>Детектор фосфатов</h3>
+                <h3>Детектор фосфатов в средствах</h3>
                 <div class="detector">
                     <div class="detector-screen" id="detectorScreen">
+                        <!-- Здесь будет появляться результат сканирования -->
                         <div class="scan-line"></div>
                     </div>
                     <div class="detector-controls">
@@ -269,7 +283,7 @@
                             <option value="eco">Эко-средство</option>
                         </select>
                         <button class="scan-btn" id="scanProduct">
-                            <i class="fas fa-search"></i> Просканировать
+                            <i class="fas fa-search"></i> Просканировать продукт
                         </button>
                     </div>
                 </div>
@@ -327,7 +341,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>© 2026. Подготовил Гульков Илья 9"г"| Школьная работа по химии</p>
+                <p>© 2023 Проект "Защита от фосфатов" | Школьная работа по химии</p>
             </div>
         </div>
     </footer>
@@ -345,7 +359,7 @@
                 <canvas id="simulationCanvas" width="800" height="400"></canvas>
                 <div class="simulation-controls">
                     <button id="startSimulation">
-                        <i class="fas fa-play"></i> Запустить
+                        <i class="fas fa-play"></i> Запустить симуляцию
                     </button>
                     <button id="resetSimulation">
                         <i class="fas fa-redo"></i> Сбросить
@@ -363,4 +377,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
