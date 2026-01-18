@@ -6,195 +6,359 @@
     <title>Фосфаты: Защита для 9 класса</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Навигация -->
     <nav class="navbar">
-        <div class="nav-content">
+        <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-shield-alt"></i>
-                <span>AntiPhosphate</span>
+                <span>Phosphate<span class="logo-highlight">Guard</span></span>
             </div>
             <div class="nav-links">
-                <a href="#home">Главная</a>
-                <a href="#info">О фосфатах</a>
-                <a href="#danger">Опасность</a>
-                <a href="#protection">Защита</a>
-                <a href="#quiz">Викторина</a>
+                <a href="#home"><i class="fas fa-home"></i> Главная</a>
+                <a href="#info"><i class="fas fa-vial"></i> О фосфатах</a>
+                <a href="#dangers"><i class="fas fa-skull-crossbones"></i> Опасности</a>
+                <a href="#protection"><i class="fas fa-user-shield"></i> Защита</a>
+                <a href="#quiz"><i class="fas fa-brain"></i> Викторина</a>
             </div>
-            <button class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="print-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Герой -->
+    <!-- Главная секция -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Фосфаты: <span class="highlight">невидимая угроза</span></h1>
-            <p class="subtitle">Школьный проект по химии. Узнай, как защитить себя и близких</p>
-            <button class="cta-btn" onclick="scrollToSection('info')">Начать изучение</button>
+            <h1 class="hero-title">
+                Фосфаты: <span class="highlight">скрытая угроза</span> в вашем доме
+            </h1>
+            <p class="hero-subtitle">
+                Школьный проект по химии. Узнайте, как защитить себя и близких 
+                от опасных химических соединений в бытовой химии
+            </p>
+            <button class="cta-button" id="startJourney">
+                <i class="fas fa-flask"></i> Начать исследование
+            </button>
         </div>
-        <div class="molecule">
-            <div class="atom central"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="atom"></div>
-            <div class="bond"></div>
-            <div class="bond"></div>
-            <div class="bond"></div>
-            <div class="bond"></div>
-        </div>
-    </section>
-
-    <!-- Информация -->
-    <section id="info" class="section">
-        <h2><i class="fas fa-vial"></i> Что такое фосфаты?</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon danger">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <h3>Где содержатся?</h3>
-                <ul>
-                    <li>Стиральные порошки</li>
-                    <li>Моющие средства</li>
-                    <li>Косметика</li>
-                    <li>Пищевые добавки</li>
-                </ul>
+        <div class="hero-visual">
+            <div class="molecule-animation">
+                <div class="atom" id="atom1">P</div>
+                <div class="atom" id="atom2">O</div>
+                <div class="atom" id="atom3">O</div>
+                <div class="atom" id="atom4">O</div>
+                <div class="bond" id="bond1"></div>
+                <div class="bond" id="bond2"></div>
+                <div class="bond" id="bond3"></div>
+                <div class="bond" id="bond4"></div>
             </div>
-            <div class="card">
-                <div class="card-icon warning">
-                    <i class="fas fa-lungs"></i>
-                </div>
-                <h3>Вред для здоровья</h3>
-                <ul>
-                    <li>Аллергии</li>
-                    <li>Раздражение кожи</li>
-                    <li>Астма</li>
-                    <li>Нарушения обмена</li>
-                </ul>
-            </div>
-            <div class="card">
-                <div class="card-icon eco">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h3>Вред для экологии</h3>
-                <ul>
-                    <li>Цветение водоемов</li>
-                    <li>Гибель рыбы</li>
-                    <li>Загрязнение почвы</li>
-                </ul>
+            <div class="formula-display">
+                <code>PO₄³⁻</code>
+                <p>Ион фосфата</p>
             </div>
         </div>
     </section>
 
-    <!-- Опасность -->
-    <section id="danger" class="section dark">
-        <h2><i class="fas fa-skull-crossbones"></i> Чем опасны фосфаты?</h2>
-        <div class="danger-content">
-            <div class="danger-text">
-                <p>Фосфаты <span class="highlight">не полностью выполаскиваются</span> с одежды и посуды, попадая в организм через:</p>
-                <ul class="danger-list">
-                    <li><i class="fas fa-tshirt"></i> Кожу с одежды</li>
-                    <li><i class="fas fa-utensils"></i> Пищу с посуды</li>
-                    <li><i class="fas fa-wind"></i> Дыхательные пути</li>
-                </ul>
-                <p>Они усиливают проникновение ПАВ через кожу, вызывая хронические заболевания.</p>
-            </div>
-            <div class="body-diagram">
-                <div class="organ" data-organ="легкие">🫁</div>
-                <div class="organ" data-organ="сердце">❤️</div>
-                <div class="organ" data-organ="кожа">👤</div>
-                <div class="organ" data-organ="почки">🧪</div>
+    <!-- Что такое фосфаты -->
+    <section id="info" class="content-section">
+        <div class="container">
+            <h2><i class="fas fa-atom"></i> Что такое фосфаты?</h2>
+            <div class="content-card">
+                <div class="card-body">
+                    <p>Фосфаты — химические соединения на основе фосфора, которые активно используются в бытовой химии.</p>
+                    
+                    <div class="slider-container">
+                        <h3>Концентрация фосфатов в продуктах</h3>
+                        <input type="range" min="0" max="100" value="70" class="slider" id="concentrationSlider">
+                        <div class="slider-info">
+                            <span id="currentConcentration">70%</span>
+                            <span class="slider-label">Стиральные порошки</span>
+                        </div>
+                        <div class="slider-labels">
+                            <span>0%</span>
+                            <span>25%</span>
+                            <span>50%</span>
+                            <span>75%</span>
+                            <span>100%</span>
+                        </div>
+                    </div>
+
+                    <div class="facts-grid">
+                        <div class="fact-card">
+                            <i class="fas fa-soap"></i>
+                            <h4>Стиральные порошки</h4>
+                            <p>До 70% содержания</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-spray-can"></i>
+                            <h4>Моющие средства</h4>
+                            <p>До 50% содержания</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-cookie-bite"></i>
+                            <h4>Пищевые добавки</h4>
+                            <p>E338-E343</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Удобрения</h4>
+                            <p>Основной компонент</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Защита -->
-    <section id="protection" class="section">
-        <h2><i class="fas fa-shield-alt"></i> Как защититься?</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">1</div>
-                <h3>Читайте состав</h3>
-                <p>Избегайте: Sodium Tripolyphosphate, Phosphates, E338-E343</p>
+    <!-- Опасности фосфатов -->
+    <section id="dangers" class="content-section dark-section">
+        <div class="container">
+            <h2><i class="fas fa-exclamation-triangle"></i> Чем опасны фосфаты?</h2>
+            <div class="dangers-grid">
+                <div class="danger-card">
+                    <div class="danger-icon health">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Для здоровья</h3>
+                    <ul>
+                        <li>Аллергические реакции</li>
+                        <li>Раздражение кожи и глаз</li>
+                        <li>Нарушение обмена веществ</li>
+                        <li>Проблемы с дыханием</li>
+                    </ul>
+                    <button class="simulate-btn" data-example="health">
+                        <i class="fas fa-play"></i> Симуляция воздействия
+                    </button>
+                </div>
+                
+                <div class="danger-card">
+                    <div class="danger-icon ecology">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Для экологии</h3>
+                    <ul>
+                        <li>Цветение водоемов</li>
+                        <li>Гибель рыбы и растений</li>
+                        <li>Загрязнение почвы</li>
+                        <li>Нарушение экобаланса</li>
+                    </ul>
+                    <button class="simulate-btn" data-example="ecology">
+                        <i class="fas fa-play"></i> Симуляция загрязнения
+                    </button>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h3>Выбирайте эко-средства</h3>
-                <p>Ищите маркировку: "Без фосфатов", "ECO", "BIO"</p>
+
+            <div class="pollution-simulator">
+                <h3>Симуляция загрязнения воды</h3>
+                <div class="simulator-container">
+                    <div class="water-tank" id="waterTank">
+                        <div class="water-level"></div>
+                        <div class="phosphates" id="phosphates"></div>
+                        <div class="algae" id="algae"></div>
+                        <div class="fish" id="fish"></div>
+                    </div>
+                    <div class="simulator-controls">
+                        <div class="control-group">
+                            <label>Уровень фосфатов:</label>
+                            <input type="range" min="0" max="100" value="50" id="phosSlider">
+                            <span id="phosValue">50%</span>
+                        </div>
+                        <div class="control-group">
+                            <label>Время воздействия:</label>
+                            <div class="time-controls">
+                                <button class="time-btn" onclick="changeTime(-10)"><i class="fas fa-backward"></i></button>
+                                <span id="timeDisplay">60 дней</span>
+                                <button class="time-btn" onclick="changeTime(10)"><i class="fas fa-forward"></i></button>
+                            </div>
+                        </div>
+                        <button class="start-btn" onclick="startPollutionSim()">
+                            <i class="fas fa-play"></i> Запустить симуляцию
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <h3>Натуральные альтернативы</h3>
-                <p>Сода, уксус, лимонная кислота, хозяйственное мыло</p>
+        </div>
+    </section>
+
+    <!-- Защита от фосфатов -->
+    <section id="protection" class="content-section">
+        <div class="container">
+            <h2><i class="fas fa-shield-alt"></i> Как защититься?</h2>
+            
+            <div class="protection-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Читайте состав</h3>
+                        <p>Избегайте продуктов с обозначениями:</p>
+                        <div class="chemical-list">
+                            <div class="chemical bad">Sodium Tripolyphosphate</div>
+                            <div class="chemical bad">Phosphoric Acid</div>
+                            <div class="chemical bad">E338-E343</div>
+                            <div class="chemical good">Natural Soap Nuts</div>
+                            <div class="chemical good">Sodium Bicarbonate</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Выбирайте эко-сертификаты</h3>
+                        <div class="certificates">
+                            <div class="certificate" data-cert="eco">
+                                <i class="fas fa-leaf"></i>
+                                <span>ECO</span>
+                            </div>
+                            <div class="certificate" data-cert="bio">
+                                <i class="fas fa-recycle"></i>
+                                <span>BIO</span>
+                            </div>
+                            <div class="certificate" data-cert="safe">
+                                <i class="fas fa-check"></i>
+                                <span>Без фосфатов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Натуральные альтернативы</h3>
+                        <div class="alternatives">
+                            <div class="alternative">
+                                <i class="fas fa-vial"></i>
+                                <span>Пищевая сода</span>
+                            </div>
+                            <div class="alternative">
+                                <i class="fas fa-wine-bottle"></i>
+                                <span>Уксус</span>
+                            </div>
+                            <div class="alternative">
+                                <i class="fas fa-lemon"></i>
+                                <span>Лимонная кислота</span>
+                            </div>
+                            <div class="alternative">
+                                <i class="fas fa-soap"></i>
+                                <span>Хоз. мыло</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-num">4</div>
-                <h3>Тщательное полоскание</h3>
-                <p>Дополнительное полоскание при стирке и мытье посуды</p>
+
+            <div class="detector-simulator">
+                <h3>Детектор фосфатов</h3>
+                <div class="detector">
+                    <div class="detector-screen" id="detectorScreen">
+                        <div class="scan-line"></div>
+                    </div>
+                    <div class="detector-controls">
+                        <select id="productSelect">
+                            <option value="powder">Стиральный порошок</option>
+                            <option value="detergent">Моющее средство</option>
+                            <option value="shampoo">Шампунь</option>
+                            <option value="eco">Эко-средство</option>
+                        </select>
+                        <button class="scan-btn" id="scanProduct">
+                            <i class="fas fa-search"></i> Просканировать
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Викторина -->
-    <section id="quiz" class="section quiz-section">
-        <h2><i class="fas fa-brain"></i> Проверь свои знания</h2>
-        <div class="quiz-container">
-            <div class="quiz-content">
-                <h3 id="question">Где чаще всего содержатся фосфаты?</h3>
-                <div class="options">
-                    <button class="option" onclick="checkAnswer(0)">Во фруктах</button>
-                    <button class="option" onclick="checkAnswer(1)">В бытовой химии</button>
-                    <button class="option" onclick="checkAnswer(2)">В воде</button>
-                    <button class="option" onclick="checkAnswer(3)">В воздухе</button>
+    <section id="quiz" class="content-section quiz-section">
+        <div class="container">
+            <h2><i class="fas fa-brain"></i> Проверь знания о фосфатах</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-content" id="quizContainer">
+                    <!-- Вопросы будут загружены через JS -->
                 </div>
-                <div class="quiz-feedback" id="feedback"></div>
-                <button class="next-btn" onclick="nextQuestion()" id="nextBtn">Далее</button>
+                
+                <div class="quiz-results" id="quizResults">
+                    <h3>Результаты викторины</h3>
+                    <div class="score-display">
+                        <span id="score">0</span>/5
+                    </div>
+                    <p id="resultMessage"></p>
+                    <button class="retry-btn" id="retryQuiz">
+                        <i class="fas fa-redo"></i> Попробовать ещё раз
+                    </button>
+                </div>
             </div>
-            <div class="quiz-score">
-                <h4>Твой счет:</h4>
-                <div class="score">0/5</div>
-                <button class="restart-btn" onclick="restartQuiz()">Заново</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Факты -->
-    <section class="facts">
-        <h2><i class="fas fa-lightbulb"></i> Интересные факты</h2>
-        <div class="fact-card">
-            <p id="fact">В Европе фосфаты в бытовой химии запрещены с 2013 года!</p>
-            <button onclick="changeFact()">Другой факт</button>
         </div>
     </section>
 
     <!-- Футер -->
-    <footer>
-        <div class="footer-content">
-            <div class="project-info">
-                <h4>Школьный проект</h4>
-                <p>Ученика 9 класса по химии</p>
-                <p>Тема: "Защита от фосфатов"</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>PhosphateGuard</h4>
+                    <p>Школьный проект по химии</p>
+                    <p>Ученик 9 класса</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <a href="#"><i class="fas fa-book"></i> Исследования</a>
+                    <a href="#"><i class="fas fa-video"></i> Видеоматериалы</a>
+                    <a href="#"><i class="fas fa-file-pdf"></i> Руководство</a>
+                </div>
+                
+                <div class="footer-share">
+                    <h4>Поделиться проектом</h4>
+                    <button class="share-btn" onclick="shareProject()">
+                        <i class="fas fa-share-alt"></i> Поделиться
+                    </button>
+                </div>
             </div>
-            <div class="tech">
-                <h4>Технологии</h4>
-                <p>HTML, CSS, JavaScript</p>
-                <p>GitHub Pages</p>
+            
+            <div class="footer-bottom">
+                <p>© 2023 Проект "Защита от фосфатов" | Школьная работа по химии</p>
             </div>
-            <div class="share">
-                <button onclick="shareProject()">
-                    <i class="fas fa-share"></i> Поделиться
-                </button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2023 AntiPhosphate Project</p>
-            <p>Сделано с ❤️ для химии</p>
         </div>
     </footer>
+
+    <!-- Модальное окно для симуляций -->
+    <div class="modal" id="simulationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Симуляция воздействия фосфатов</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <canvas id="simulationCanvas" width="800" height="400"></canvas>
+                <div class="simulation-controls">
+                    <button id="startSimulation">
+                        <i class="fas fa-play"></i> Запустить
+                    </button>
+                    <button id="resetSimulation">
+                        <i class="fas fa-redo"></i> Сбросить
+                    </button>
+                    <div class="speed-control">
+                        <label>Скорость:</label>
+                        <input type="range" min="1" max="5" value="3" id="simulationSpeed">
+                    </div>
+                </div>
+                <p class="simulation-description" id="simulationDescription"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
